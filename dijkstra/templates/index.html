@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dijkstra</title>
+    <!-- Bootstrap para estilos -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+</head>
+<body>
+    <div class="container mt-6">
+        <h1 class="text-center">Algoritmo de Dijkstra</h1>
+
+        <!-- Incluir la imagen -->
+        <div class="text-center">
+            <img src="{{ url_for('static', filename='img/nodo.png') }}" alt="Imagen de ejemplo" class="img-fluid">
+        </div>
+
+        <!-- Formulario para ingresar nodos -->
+        <form method="POST">
+            <div>
+                <label for="inicio" style="font-size:x-large;">Nodo inicial:</label>
+                <input type="text" id="inicio" name="inicio" class="form-control" style="font-size:x-large;" required>
+            </div>
+
+            <div>
+                <label for="fin" style="font-size:x-large;">Nodo destino:</label>
+                <input type="text" id="fin" name="fin" class="form-control" style="font-size:x-large;" required>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-info">Calcular</button>
+        </form>
+
+        <!-- Mostrar resultado si existe -->
+        {% if resultado %}
+        <div class="text-center mt-4" style="font-size:x-large;">
+            <h2>El camino más corto es:</h2>
+            <p>Nodos: {{ resultado.camino }}</p>
+            <p>Costo acumulado: {{ resultado.costo }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+/* Ajustes personalizados para el diseño */
+body {
+    font-family: 'Arial', sans-serif;
+}
+h1{
+    text-align: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 600px;  /* Limitar el ancho de la vista para una mejor lectura */
+}
+
+.form-group {
+    margin-bottom: 1.5em;  /* Espacio entre elementos del formulario */
+}
+
+.btn {
+    background-color: #007bff;  /* Color del botón */
+    color: white;
+}
+
+.btn:hover {
+    background-color: #0056b3;  /* Color del botón cuando se pasa el mouse por encima */
+}
