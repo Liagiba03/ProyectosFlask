@@ -1,0 +1,40 @@
+<!-- templates/index.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Ruta más corta entre ciudades</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Ruta más corta entre ciudades</h1>
+      <form method="POST">
+        <div>
+          <label for="start">Ciudad de inicio:</label>
+          <select name="start" id="start" required>
+            {% for city in coord.keys() %}
+              <option value="{{ city }}">{{ city }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div>
+          <label for="end">Ciudad de destino:</label>
+          <select name="end" id="end" required>
+            {% for city in coord.keys() %}
+              <option value="{{ city }}">{{ city }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <button type="submit">Calcular ruta</button>
+      </form>
+
+      {% if distance %}
+        <h2>Distancia: {{ distance }}</h2>
+        {% if map_url %}
+          <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="{{ map_url }}"></iframe>
+        {% endif %}
+      {% endif %}
+    </div>
+  </body>
+</html>
